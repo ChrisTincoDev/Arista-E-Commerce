@@ -1,12 +1,17 @@
+---
+import BestProductsCard from './BestProductsCard.astro'
+---
+
 <section class="w-screen bg-[#D9D9D9] h-auto overflow-hidden relative border-y">
-    <div class="max-w-[1440px] h-full mx-auto px-20 py-21 flex gap-40 items-center relative">
+    <div class="max-w-[1440px] h-full mx-auto px-20 py-21 flex gap-40 items-stretch relative">
         <div class="w-2/5 h-full flex flex-col gap-14 justify-start items-start">
             <h1 class="text-8xl">Best Seller Product</h1>
             <p class="text-2xl text-balance">Discover our Best Seller Products! These top-rated favorites are loved by everyone for a reason. From trendy clothing to must-have accessories, find the perfect pieces that everyone’s talking about. Don’t wait—grab yours now and join the hype!</p>
             <button class="mt-20 text-4xl w-xs h-24 border hover:scale-110 hover:text-white hover:bg-black duration-300">SEE MORE</button>
         </div>
-        <div class="w-3/5 h-full">
-
+        <div class="w-3/5 h-full gap-10 flex overflow-hidden">
+            <BestProductsCard img="/hoodie.jpg" stars="★ ★ ★ ★ ★" product="Loose Fit Hoodie - Pink" ogprice="$800" price="$400" />
+            <!-- <BestProductsCard img="/hoodie2.webp" stars="★ ★ ★ ★ ★" product="Loose Fit Hoodie - Sky Blue" ogprice="$700" price="$370" />-->
         </div>
     </div>
 </section>
