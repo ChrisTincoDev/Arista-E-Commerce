@@ -1,0 +1,8 @@
+---
+const { img, text } = Astro.props;
+---
+
+<div class="aspect-[11/12] w-96 flex items-end justify-center overflow-hidden border">
+    <img src={img} alt={text} class="object-cover w-full scale-105" />
+    <h2 class="absolute z-10 uppercase w-2xs h-14 bg-white flex justify-center items-center mb-4 text-4xl shadow">{text}</h2>
+</div>

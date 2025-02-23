@@ -1,0 +1,31 @@
+---
+import CollectionGrid from "./CollectionGrid.astro"
+import CollectionStats from "./CollectionStats.astro"
+---
+
+<section class="w-screen bg-white h-auto overflow-hidden">
+    <div class="max-w-[1440px] h-full mx-auto px-20 py-21 flex flex-col gap-40 items-center relative">
+        <h1 class="text-8xl">New Collection</h1>
+        <div class="grid grid-cols-3 gap-10">
+            <CollectionGrid img="/public/collection1.jpg" text="Shirts" />
+            <CollectionGrid img="/public/collection2.jpg" text="T-Shirts" />
+            <CollectionGrid img="/public/collection3.jpg" text="Jeans" />
+        </div>
+        <div class="flex w-full justify-center items-stretch mb-10">
+            <div class="w-1/2 flex justify-end">
+                <div class="aspect-[11/13] w-xl flex items-start justify-center overflow-hidden rounded-tl-[30%] shadow-xl">
+                    <img src="/public/model1.jpg" alt="model" class="w-full object-cover" />
+                </div>
+            </div>
+            <div class="w-1/2 flex flex-col h-full flex-grow p-10 gap-10 justify-between">
+                <h2 class="text-6xl leading-tight">Best Fashion Since 2025</h2>
+                <p class="text-base text-justify leading-loose">Fashion Sale 2025: Your chance to redefine your style! Explore exclusive discounts on trendy apparel, shoes, and accessories for both men and women. Don’t miss out on this limited-time event to refresh your wardrobe with the season’s must-haves. Shop now and make 2024 your most stylish year yet!</p>
+            </div>
+            <div class="absolute bottom-10 right-40 z-10 bg-[#6A6A6A] flex justify-center">
+                <CollectionStats stat="+500" text="satisfied customers and counting" />
+                <CollectionStats stat="+1000" text="exclusive offers available" />
+                <CollectionStats stat="+98%" text="customer satisfaction rate" />
+            </div>
+        </div>
+    </div>
+</section>
