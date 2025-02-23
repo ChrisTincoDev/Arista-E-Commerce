@@ -1,2 +1,76 @@
-<section>
+<section class="w-screen h-screen bg-[#D9D9D9] overflow-hidden">
+    <div class="max-w-[1440px] h-full mx-auto px-20 py-10 flex flex-col gap-10"> 
+        <header class="flex w-full justify-between items-center text-2xl">
+            <button class="uppercase w-44 h-14 bg-black text-white">Arista</button>
+            <nav>
+                <ul class="flex gap-8 text-xl">
+                    <li><a href="#" class="hoverheader">Men</a></li>
+                    <li><a href="#" class="hoverheader">Women</a></li>
+                    <li><a href="#" class="hoverheader">Kids</a></li>
+                    <li><a href="#" class="hoverheader">Collection</a></li>
+                    <li><a href="#" class="hoverheader">Trends</a></li>
+                </ul>
+            </nav>
+            <button class="w-44 h-14 border">Login</button>
+        </header>
+        <div class="w-full flex-grow flex">
+            <div class="w-1/2 flex items-start justify-center flex-col gap-12">
+                <h1 class="text-6xl mb-10 leading-relaxed">Find The Best <br> Fashion Style For You</h1>
+                <p class="text-2xl w-2/3 leading-relaxed">Discover the latest trends and shine with ARISTA's new collection of clothing, footwear, and accesories for women and men.</p>
+                <button class="w-60 h-16 text-3xl bg-black text-white">Shop Now</button>
+            </div>
+            <div class="w-1/2 flex items-center justify-center p-10">
+                <div class="aspect-[5/6] border h-full rounded-bl-[30%] overflow-hidden flex relative">
+                    <div class="bg-[#db1c24] absolute z-0 h-full w-3/4 left-1/2 y -translate-x-1/2"></div>
+                    <div class="h-full w-full flex flex-col justify-between">
+                        <div class="w-full bg-black overflow-hidden translate-y-[40%] rotate-z-[347deg] scale-105">
+                            <!-- Banda giratoria -->
+                            <div class="marquee flex whitespace-nowrap text-xl uppercase tracking-wider text-white px-5 py-2">
+                                <span class="mr-[8px]">LIQUIDACIÓN TOP •</span>
+                            </div>
+                        </div>
+                        <div class="w-full bg-black overflow-hidden translate-y-[-400%] scale-105 rotate-z-[10deg]">
+                            <!-- Banda giratoria -->
+                            <div class="marquee flex whitespace-nowrap text-xl uppercase tracking-wider text-white px-5 py-2">
+                                <span class="mr-[8px]">LIQUIDACIÓN TOP •</span>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="/dgbw47f-ea6dbbdc-2ee0-4c86-9964-34208c75de36.webp" alt="Billie" class="absolute z-10 h-full w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const marquees = document.querySelectorAll<HTMLElement>(".marquee"); // Seleccionar todos los elementos con la clase .marquee
+
+    marquees.forEach(marquee => {
+        // Duplicamos el contenido varias veces hasta llenar el contenedor
+        const repeatCount = 10; // Ajusta según sea necesario
+        let text = marquee.innerHTML;
+        for (let i = 0; i < repeatCount; i++) {
+            marquee.innerHTML += text;
+        }
+
+        // Aplicamos animación con JS
+        let scrollAmount = 0;
+        function animateMarquee() {
+            scrollAmount -= 1; // Velocidad del desplazamiento
+            (marquee as HTMLElement).style.transform = `translateX(${scrollAmount}px)`;
+
+            // Si el primer elemento ha salido completamente, reiniciamos
+            if (Math.abs(scrollAmount) >= (marquee.children[0] as HTMLElement).offsetWidth + 8) { 
+                scrollAmount = 0;
+            }
+
+            requestAnimationFrame(animateMarquee);
+        }
+
+        animateMarquee();
+    });
+});
+
+    </script>
 </section>

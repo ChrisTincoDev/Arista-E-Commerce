@@ -1,0 +1,56 @@
+---
+export let text = "LIQUIDACION TOP •";
+---
+
+<div class="marquee-container">
+  <div class="marquee-content">
+    {Array(10).fill(text).join(" ")}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const marquees = document.querySelectorAll(".marquee-content");
+
+    marquees.forEach((marquee) => {
+      let scrollAmount = 0;
+      function animateMarquee() {
+        scrollAmount -= 1;
+        marquee.style.transform = `translateX(${scrollAmount}px)`;
+
+        if (Math.abs(scrollAmount) >= marquee.firstElementChild.offsetWidth + 32) {
+          scrollAmount = 0;
+        }
+
+        requestAnimationFrame(animateMarquee);
+      }
+
+      animateMarquee();
+    });
+  });
+</script>
+
+<style>
+.marquee-container {
+  width: 100%;
+  background: black;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: white;
+  padding: 0.5rem;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee-item {
+  margin-right: 2rem;
+}
+</style>
